@@ -10,7 +10,7 @@ The plugin is able to detect and block bots pretending to be:
  * Bingbot
  * Facebookbot
 
-Detection is done using DNS PTR.
+Detection is done using DNS PTR records.
 
 ## Prerequisities
 
@@ -19,7 +19,13 @@ Detection is done using DNS PTR.
  * LuaSocket library
  * Fully working DNS resolving
 
-## Installation
+## LuaSocket library installation
+
+LuaSocket library should be part of your linux distribution. Here is an example
+of installation on Debian linux:
+`apt install lua-socket`
+
+## Plugin installation
 
 Copy all files from `plugins` directory into the `plugins` directory of your
 OWASP ModSecurity Core Rule Set (CRS) installation.
@@ -50,8 +56,12 @@ after like above. Adjust the paths accordingly._
 
 ## Testing
 
-After configuration, antivirus protection should be tested, for example, using:  
-curl http://localhost --header "User-Agent: Googlebot"
+After configuration, plugin should be tested, for example, using:  
+`curl http://localhost --header "User-Agent: Googlebot"`
+
+Using default CRS configuration, this request should end with status 403 with
+the following message in the log:
+`ModSecurity: Warning. Fake Bot Plugin: Detected fake Googlebot. [file "/path/plugins/20-fake-bot-before.conf"] [line "27"] [id "9520160"] [msg "Fake bot detected: Googlebot"] [data "Matched Data: googlebot found within REQUEST_HEADERS:User-Agent: googlebot"] [severity "CRITICAL"] [ver "fake-bot-plugin/1.0.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-bot"] [tag "capec/1000/225/22/77/13"] [tag "PCI/6.5.10"] [tag "paranoia-level/1"] [hostname "example.com"] [uri "/"] [unique_id "YebKpaODyuCatiflOqDY2gAAAAg"]`
 
 ## License
 
