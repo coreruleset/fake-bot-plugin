@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a plugin that brings blocking of fake bots to CRS.
+This is a plugin that brings blocking of bots faking User-Agent to CRS.
 
 The plugin is able to detect and block bots pretending to be:
 
@@ -50,8 +50,8 @@ after like above. Adjust the paths accordingly._
 
 ## Testing
 
-After configuration, antivirus protection should be tested, for example, using:
-__curl http://localhost --header "User-Agent: Googlebot"
+After configuration, antivirus protection should be tested, for example, using:  
+curl http://localhost --header "User-Agent: Googlebot"
 
 ## License
 
