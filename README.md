@@ -1,4 +1,4 @@
-# OWASP ModSecurity Core Rule Set - Fake bot Plugin
+# OWASP ModSecurity Core Rule Set - Fake Bot Plugin
 
 ## Description
 
