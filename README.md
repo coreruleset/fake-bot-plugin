@@ -40,6 +40,7 @@ OWASP ModSecurity Core Rule Set (CRS) installation.
 
 ```
 <IfModule security2_module>
+
  Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
 
  Include modsecurity.d/owasp-modsecurity-crs/plugins/*-config.conf
@@ -56,12 +57,12 @@ after like above. Adjust the paths accordingly._
 
 ## Testing
 
-After configuration, plugin should be tested, for example, using:  
+After installation, plugin should be tested, for example, using:  
 `curl http://localhost --header "User-Agent: Googlebot"`
 
 Using default CRS configuration, this request should end with status 403 with
 the following message in the log:
-`ModSecurity: Warning. Fake Bot Plugin: Detected fake Googlebot. [file "/path/plugins/fake-bot-after.conf"] [line "27"] [id "9504110"] [msg "Fake bot detected: Googlebot"] [data "Matched Data: googlebot found within REQUEST_HEADERS:User-Agent: googlebot"] [severity "CRITICAL"] [ver "fake-bot-plugin/1.0.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-bot"] [tag "capec/1000/225/22/77/13"] [tag "PCI/6.5.10"] [tag "paranoia-level/1"] [hostname "example.com"] [uri "/"] [unique_id "YebRag1XU2Ir-Zmt0Zlo2wAAAAA"]`
+`ModSecurity: Warning. Fake Bot Plugin: Detected fake Googlebot. [file "/path/plugins/fake-bot-after.conf"] [line "27"] [id "9504110"] [msg "Fake bot detected: Googlebot"] [data "Matched Data: googlebot found within REQUEST_HEADERS:User-Agent: googlebot"] [severity "CRITICAL"] [ver "fake-bot-plugin/1.0.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-bot"] [tag "capec/1000/225/22/77/13"] [tag "PCI/6.5.10"] [tag "paranoia-level/1"] [hostname "localhost"] [uri "/"] [unique_id "YebRag1XU2Ir-Zmt0Zlo2wAAAAA"]`
 
 ## License
 
