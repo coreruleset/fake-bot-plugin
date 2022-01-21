@@ -2,15 +2,18 @@
 
 ## Description
 
-This is a plugin that brings blocking of bots faking User-Agent to CRS.
+This is a plugin that brings blocking of bots and impersonators faking well known
+User-Agents in their HTTP requests.
 
-The plugin is able to detect and block bots pretending to be:
+As of this writing, the plugin is able to detect bots pretending to be:
 
  * Googlebot
  * Bingbot
  * Facebookbot
 
 Detection is done using DNS PTR records.
+
+Upon successful detection, the requests will then be blocked by CRS depending on the CRS configuration.
 
 ## Prerequisities
 
