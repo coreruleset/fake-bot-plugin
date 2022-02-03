@@ -16,7 +16,7 @@ function main(user_agent_lowercase)
 		-- https://developers.google.com/search/docs/advanced/crawling/verifying-googlebot
 		bot_domains = {".googlebot.com", ".google.com"}
 		bot_name = "Googlebot"
-	elseif string.match(user_agent_lowercase, "facebook") then
+	elseif string.match(user_agent_lowercase, "facebookexternalhit") or string.match(user_agent_lowercase, "facebookcatalog") or string.match(user_agent_lowercase, "facebookbot") then
 		-- https://developers.facebook.com/docs/sharing/webmasters/crawler/
 		-- https://developers.facebook.com/docs/sharing/bot/
 		bot_domains = {".facebook.com", ".fbsv.net"}
