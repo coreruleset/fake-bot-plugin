@@ -29,15 +29,23 @@ function main(matched_bot)
 		return nil
 	end
 	local remote_addr = m.getvar("REMOTE_ADDR", "none")
-	hosts = socket.dns.getnameinfo(remote_addr)
+	local remote_host = m.getvar("REMOTE_HOST", "none")
+	-- If Apache HostnameLookups is On, we can do one less DNS lookup.
+	if remote_addr ~= remote_host then
+		hosts = { [1] = remote_host }
+	else
+		hosts = socket.dns.getnameinfo(remote_addr)
+	end
 	for k1, host in pairs(hosts) do
 		for k2, domain in pairs(bot_domains) do
 			if ends_with(host, domain) then
 				addrinfo = socket.dns.getaddrinfo(host)
-				for k3, ips in pairs(addrinfo) do
-					for k4, ip in pairs(ips) do
-						if remote_addr == ip then
-							return nil
+				if addrinfo ~= nil then
+					for k3, ips in pairs(addrinfo) do
+						for k4, ip in pairs(ips) do
+							if remote_addr == ip then
+								return nil
+							end
 						end
 					end
 				end
