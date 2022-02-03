@@ -5,23 +5,23 @@ function ends_with(str, ending)
 	return ending == "" or str:sub(-#ending) == ending
 end
 
-function main(user_agent_lowercase)
+function main(matched_bot)
 	pcall(require, "m")
 	local ok, socket = pcall(require, "socket")
 	if not ok then
 		m.log(2, "Fake Bot Plugin ERROR: LuaSocket library not installed, please install it or disable this plugin.")
 		return nil
 	end
-	if string.match(user_agent_lowercase, "googlebot") then
+	if matched_bot == "googlebot" then
 		-- https://developers.google.com/search/docs/advanced/crawling/verifying-googlebot
 		bot_domains = {".googlebot.com", ".google.com"}
 		bot_name = "Googlebot"
-	elseif string.match(user_agent_lowercase, "facebookexternalhit") or string.match(user_agent_lowercase, "facebookcatalog") or string.match(user_agent_lowercase, "facebookbot") then
+	elseif matched_bot == "facebookexternalhit" or matched_bot == "facebookcatalog" or matched_bot == "facebookbot" then
 		-- https://developers.facebook.com/docs/sharing/webmasters/crawler/
 		-- https://developers.facebook.com/docs/sharing/bot/
 		bot_domains = {".facebook.com", ".fbsv.net"}
 		bot_name = "Facebookbot"
-	elseif string.match(user_agent_lowercase, "bingbot") then
+	elseif matched_bot == "bingbot" then
 		-- https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
 		bot_domains = {".search.msn.com"}
 		bot_name = "Bingbot"
