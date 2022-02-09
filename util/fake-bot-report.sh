@@ -3,7 +3,7 @@
 # Script to analyze the alerts of the OWASP ModSecurity Core Rule Set
 # Fake Bot Plugin based on the error log alerts.
 #
-# Usage: cat error.log | fake-bot-report.sh
+# Usage: cat error.log | ./fake-bot-report.sh
 #
 # Created in 2022 by Christian Folini.
 # License: Public Domain
