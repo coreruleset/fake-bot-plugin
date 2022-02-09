@@ -88,6 +88,10 @@ the following message in the log:
 
 If you are running with a higher Anomaly Threshold, you probably won't be blocked, but the alert message will still be there.
 
+## Reporting
+
+Please find a script named `fake-bot-report.sh` in the util folder.
+
 ## License
 
 Copyright (c) 2022 OWASP ModSecurity Core Rule Set project. All rights reserved.
