@@ -10,6 +10,7 @@ As of this writing, the plugin is able to detect bots pretending to be:
  * Googlebot
  * Bingbot
  * Facebookbot
+ * Twitterbot
 
 Detection is done using DNS PTR records.
 

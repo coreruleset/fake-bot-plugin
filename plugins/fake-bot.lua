@@ -25,6 +25,10 @@ function main(matched_bot)
 		-- https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
 		bot_domains = {".search.msn.com"}
 		bot_name = "Bingbot"
+	elseif matched_bot == "twitterbot" then
+		-- https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/troubleshooting-cards#validate_twitterbot
+		bot_domains = {".twitter.com", ".twttr.com"}
+		bot_name = "Twitterbot"
 	else
 		return nil
 	end
