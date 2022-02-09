@@ -19,7 +19,7 @@ cat | grep 9504110 > $TMPFILE
 
 (cat $TMPFILE | grep -o "\[client [^]]*" | cut -b9- | sort | uniq | while read IP; do
 	N=$(grep -c $IP $TMPFILE)
-	COUNTRY=$(geoiplookup $IP | egrep -o "[A-Z]{2}," | tr -d ,)
+	COUNTRY=$(geoiplookup $IP 2>/dev/null | egrep -o "[A-Z]{2}," | tr -d ,)
 	USERAGENT=$(grep $IP $TMPFILE | grep -o 'REQUEST_HEADERS:User-Agent: [^]]*' | sort | uniq | cut -d: -f3- | sed -e 's/\(.\{'$UAWIDTH'\}\).*/\1 .../' | tr -d \" | head -1)
 	printf "%3s %2s %-15s %s\n" $N $COUNTRY $IP "$USERAGENT"
 done) | sort -nr
