@@ -10,7 +10,7 @@
 # 
 # CAVEAT: Please note that this script only reports 1 User-Agent 
 # per offending IP.
-# 
+# Also, need to have geoiplookup installed.
 
 UAWIDTH=`expr $(tput cols) - 27`
 TMPFILE=$(mktemp)
