@@ -29,6 +29,10 @@ function main(matched_bot)
 		-- https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/troubleshooting-cards#validate_twitterbot
 		bot_domains = {".twitter.com", ".twttr.com"}
 		bot_name = "Twitterbot"
+	elseif matched_bot == "applebot" then
+		-- https://support.apple.com/en-us/HT204683
+		bot_domains = {".applebot.apple.com"}
+		bot_name = "Applebot"
 	else
 		return nil
 	end

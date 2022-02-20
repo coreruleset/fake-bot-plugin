@@ -5,11 +5,12 @@
 This is a plugin that brings blocking of bots and impersonators faking well known
 User-Agents in their HTTP requests.
 
-As of this writing, the plugin is able to detect bots pretending to be:
+The plugin is able to detect bots pretending to be:
 
- * Googlebot
+ * Applebot
  * Bingbot
  * Facebookbot
+ * Googlebot
  * Twitterbot
 
 Detection is done using DNS PTR records.
