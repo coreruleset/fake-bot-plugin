@@ -5,6 +5,33 @@ function ends_with(str, ending)
 	return ending == "" or str:sub(-#ending) == ending
 end
 
+function check_ip(ip)
+	if type(ip) ~= "string" then
+		return false
+	end
+	-- IPv4
+	local chunks = {ip:match("^(%d+)%.(%d+)%.(%d+)%.(%d+)$")}
+	if #chunks == 4 then
+		for _, chunk in pairs(chunks) do
+			if tonumber(chunk) > 255 then
+				return false
+			end
+		end
+		return true
+	end
+	-- IPv6
+	local chunks = {ip:match("^"..(("([a-fA-F0-9]*):"):rep(8):gsub(":$", "$")))}
+	if #chunks == 8 or (#chunks < 8 and ip:match("::") and not ip:gsub("::", "", 1):match("::")) then
+		for _, chunk in pairs(chunks) do
+			if #chunk > 0 and tonumber(chunk, 16) > 65535 then
+				return false
+			end
+		end
+		return true
+	end
+	return false
+end
+
 function main(matched_bot)
 	pcall(require, "m")
 	local ok, socket = pcall(require, "socket")
@@ -39,7 +66,7 @@ function main(matched_bot)
 	local remote_addr = m.getvar("REMOTE_ADDR", "none")
 	local remote_host = m.getvar("REMOTE_HOST", "none")
 	-- If Apache HostnameLookups is On, we can do one less DNS lookup.
-	if remote_addr ~= remote_host then
+	if not check_ip(remote_host) then
 		hosts = { [1] = remote_host }
 	else
 		hosts = socket.dns.getnameinfo(remote_addr)
@@ -60,6 +87,7 @@ function main(matched_bot)
 			end
 		end
 	end
+	m.log(2, string.format("Fake Bot Plugin DEBUG: REMOTE_ADDR: %s REMOTE_HOST: %s", remote_addr, remote_host))
 	m.setvar("tx.fake-bot-plugin_bot_name", bot_name)
 	return string.format("Fake Bot Plugin: Detected fake %s.", bot_name)
 end
