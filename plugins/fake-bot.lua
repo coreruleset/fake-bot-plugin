@@ -87,7 +87,6 @@ function main(matched_bot)
 			end
 		end
 	end
-	m.log(2, string.format("Fake Bot Plugin DEBUG: REMOTE_ADDR: %s REMOTE_HOST: %s", remote_addr, remote_host))
 	m.setvar("tx.fake-bot-plugin_bot_name", bot_name)
 	return string.format("Fake Bot Plugin: Detected fake %s.", bot_name)
 end
