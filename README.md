@@ -48,7 +48,7 @@ of installation on Debian / Ubuntu Linux:
 ## Plugin installation
 
 For full and up to date instructions for the different available plugin
-installation methods, refer to [How to Install a Plugin](https://coreruleset.org/docs/configuring/plugins/#how-to-install-a-plugin)
+installation methods, refer to [How to Install a Plugin](https://coreruleset.org/docs/concepts/plugins/#how-to-install-a-plugin)
 in the official CRS documentation.
 
 ## Testing
