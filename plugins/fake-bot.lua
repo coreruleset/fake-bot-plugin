@@ -60,6 +60,10 @@ function main(matched_bot)
 		-- https://support.apple.com/en-us/HT204683
 		bot_domains = {".applebot.apple.com"}
 		bot_name = "Applebot"
+	elseif matched_bot == "linkedinbot" then
+		-- https://udger.com/resources/ua-list/bot-detail?bot=LinkedInBot
+		bot_domains = {".fwd.linkedin.com"}
+		bot_name = "LinkedInBot"
 	else
 		return nil
 	end
