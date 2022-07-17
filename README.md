@@ -60,9 +60,9 @@ After installation, plugin should be tested, for example, using:
 Using default CRS configuration, this request should end with status 403 with
 the following message in the log:
 
-`ModSecurity: Warning. Fake Bot Plugin: Detected fake Googlebot. [file "/path/plugins/fake-bot-after.conf"] [line "27"] [id "9504110"] [msg "Fake bot detected: Googlebot"] [data "Matched Data: googlebot found within REQUEST_HEADERS:User-Agent: googlebot"] [severity "CRITICAL"] [ver "fake-bot-plugin/1.0.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-bot"] [tag "capec/1000/225/22/77/13"] [tag "PCI/6.5.10"] [tag "paranoia-level/1"] [hostname "localhost"] [uri "/"] [unique_id "YebRag1XU2Ir-Zmt0Zlo2wAAAAA"]`
+`ModSecurity: Warning. Fake Bot Plugin: Detected fake Googlebot. [file "/path/plugins/fake-bot-after.conf"] [line "27"] [id "9504110"] [msg "Fake bot detected: Googlebot"] [data "Matched Data: googlebot found within REQUEST_HEADERS:User-Agent: Googlebot"] [severity "CRITICAL"] [ver "fake-bot-plugin/1.0.0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-bot"] [tag "capec/1000/225/22/77/13"] [tag "PCI/6.5.10"] [tag "paranoia-level/1"] [hostname "localhost"] [uri "/"] [unique_id "YebRag1XU2Ir-Zmt0Zlo2wAAAAA"]`
 
-If you are running with a higher Anomaly Threshold, you probably won't be blocked, but the alert message will still be there.
+If you are running with a higher [Anomaly Threshold](https://coreruleset.org/docs/concepts/paranoia_levels/#how-paranoia-levels-relate-to-anomaly-scoring), you probably won't be blocked, but the alert message will still be there.
 
 ## Reporting
 
