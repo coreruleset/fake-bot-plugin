@@ -7,6 +7,7 @@ User-Agents in their HTTP requests.
 
 The plugin is able to detect bots pretending to be:
 
+ * Amazonbot
  * Applebot
  * Bingbot
  * Facebookbot

@@ -64,6 +64,10 @@ function main(matched_bot)
 		-- https://udger.com/resources/ua-list/bot-detail?bot=LinkedInBot
 		bot_domains = {".fwd.linkedin.com"}
 		bot_name = "LinkedInBot"
+	elseif matched_bot == "amazonbot" then
+		-- https://developer.amazon.com/support/amazonbot
+		bot_domains = {".crawl.amazonbot.amazon"}
+		bot_name = "Amazonbot"
 	else
 		return nil
 	end
