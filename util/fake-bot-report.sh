@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Script to analyze the alerts of the OWASP ModSecurity Core Rule Set
+# Script to analyze the alerts of the OWASP CRS
 # Fake Bot Plugin based on the error log alerts.
 #
 # Usage: cat error.log | ./fake-bot-report.sh
