@@ -1,3 +1,12 @@
+-- -----------------------------------------------------------------------
+-- OWASP CRS Plugin
+-- Copyright (c) 2021-2024 Core Rule Set project. All rights reserved.
+--
+-- The OWASP CRS plugins are distributed under
+-- Apache Software License (ASL) version 2
+-- Please see the enclosed LICENSE file for full details.
+-- -----------------------------------------------------------------------
+
 -- Code inspired by http://lua-users.org/wiki/StringRecipes .
 function ends_with(str, ending)
 	str = str:lower()
