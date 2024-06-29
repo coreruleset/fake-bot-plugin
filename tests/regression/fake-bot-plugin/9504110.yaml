@@ -13,11 +13,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: "OWASP CRS test agent"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             no_log_contains: id "9504110"
   - test_title: 9504110-2
@@ -28,11 +29,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36
+              User-Agent: "OWASP CRS test agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             log_contains: id "9504110"
   - test_title: 9504110-3
@@ -43,11 +45,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+              User-Agent: "OWASP CRS test agent: facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             log_contains: id "9504110"
   - test_title: 9504110-4
@@ -58,11 +61,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) W.X.Y.Z Safari/537.36
+              User-Agent: "OWASP CRS test agent: Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) W.X.Y.Z Safari/537.36"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             log_contains: id "9504110"
   - test_title: 9504110-5
@@ -73,11 +77,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36 Twitterbot/1.0
+              User-Agent: "OWASP CRS test agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36 Twitterbot/1.0"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             log_contains: id "9504110"
   - test_title: 9504110-6
@@ -88,11 +93,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: Mozilla/5.0 (Device; OS_version) AppleWebKit/WebKit_version (KHTML, like Gecko) Version/Safari_version Safari/WebKit_version (Applebot/Applebot_version)
+              User-Agent: "OWASP CRS test agent: Mozilla/5.0 (Device; OS_version) AppleWebKit/WebKit_version (KHTML, like Gecko) Version/Safari_version Safari/WebKit_version (Applebot/Applebot_version)"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             log_contains: id "9504110"
   - test_title: 9504110-7
@@ -103,11 +109,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: LinkedInBot/1.0 (compatible; Mozilla/5.0; +http://www.linkedin.com)
+              User-Agent: "OWASP CRS test agent: LinkedInBot/1.0 (compatible; Mozilla/5.0; +http://www.linkedin.com)"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             log_contains: id "9504110"
   - test_title: 9504110-8
@@ -118,10 +125,11 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML\, like Gecko) Version/8.0.2 Safari/600.2.5 (Amazonbot/0.1; +https://developer.amazon.com/support/amazonbot)
+              User-Agent: "OWASP CRS test agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML\, like Gecko) Version/8.0.2 Safari/600.2.5 (Amazonbot/0.1; +https://developer.amazon.com/support/amazonbot)"
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /
+            version: HTTP/1.1
+            uri: /get
           output:
             log_contains: id "9504110"
