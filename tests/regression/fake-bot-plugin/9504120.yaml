@@ -3,9 +3,9 @@ meta:
   author: "azurit"
   description: "Fake Bot Plugin"
   enabled: true
-  name: 9504110.yaml
+  name: 9504120.yaml
 tests:
-  - test_title: 9504110-1
+  - test_title: 9504120-1
     desc: Check that plugin is not blocking standard User-Agents
     stages:
       - stage:
@@ -20,8 +20,8 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            no_log_contains: id "9504110"
-  - test_title: 9504110-2
+            no_log_contains: id "9504120"
+  - test_title: 9504120-2
     desc: Check for blocking of fake Googlebot
     stages:
       - stage:
@@ -36,8 +36,8 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            log_contains: id "9504110"
-  - test_title: 9504110-3
+            log_contains: id "9504120"
+  - test_title: 9504120-3
     desc: Check for blocking of fake Facebookbot
     stages:
       - stage:
@@ -52,8 +52,8 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            log_contains: id "9504110"
-  - test_title: 9504110-4
+            log_contains: id "9504120"
+  - test_title: 9504120-4
     desc: Check for blocking of fake Bingbot
     stages:
       - stage:
@@ -68,8 +68,8 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            log_contains: id "9504110"
-  - test_title: 9504110-5
+            log_contains: id "9504120"
+  - test_title: 9504120-5
     desc: Check for blocking of fake Twitterbot
     stages:
       - stage:
@@ -84,8 +84,8 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            log_contains: id "9504110"
-  - test_title: 9504110-6
+            log_contains: id "9504120"
+  - test_title: 9504120-6
     desc: Check for blocking of fake Applebot
     stages:
       - stage:
@@ -100,8 +100,8 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            log_contains: id "9504110"
-  - test_title: 9504110-7
+            log_contains: id "9504120"
+  - test_title: 9504120-7
     desc: Check for blocking of fake LinkedInBot
     stages:
       - stage:
@@ -116,8 +116,8 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            log_contains: id "9504110"
-  - test_title: 9504110-8
+            log_contains: id "9504120"
+  - test_title: 9504120-8
     desc: Check for blocking of fake Amazonbot
     stages:
       - stage:
@@ -132,4 +132,4 @@ tests:
             version: HTTP/1.1
             uri: /get
           output:
-            log_contains: id "9504110"
+            log_contains: id "9504120"
