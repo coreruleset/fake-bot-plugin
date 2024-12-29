@@ -53,6 +53,21 @@ For full and up to date instructions for the different available plugin
 installation methods, refer to [How to Install a Plugin](https://coreruleset.org/docs/concepts/plugins/#how-to-install-a-plugin)
 in the official CRS documentation.
 
+## Plugin configuration
+
+All settings can be done in file `plugins/fake-bot-config.conf`.
+
+### tx.fake-bot-plugin_whitelist_broken_apple_devices
+
+Some software used by Apple devices (for example iMessage) are doing requests
+to web pages while pretending to be a Facebookbot and Twitterbot. If you want to
+allow this behavior and not block such requests, set this setting to `1`.
+
+Note: This setting, when enabled, is opening a hole in the fake bot detection
+which can be used by fake bots to bypass a protection provided by this plugin.
+
+Default value: 0
+
 ## Testing
 
 After installation, plugin should be tested, for example, using:  
