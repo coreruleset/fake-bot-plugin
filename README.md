@@ -55,7 +55,7 @@ in the official CRS documentation.
 
 ## Plugin configuration
 
-All settings can be done in file `plugins/fake-bot-config.conf`.
+The settings for this plugin reside in `plugins/fake-bot-config.conf`.
 
 ### tx.fake-bot-plugin_whitelist_broken_apple_devices
 
