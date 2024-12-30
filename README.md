@@ -63,8 +63,8 @@ Some software used by Apple devices send requests pretending to be a Facebook or
 iMessage, for example, does this to obtain link previews.
 If you want to allow this behavior and not block such requests, set this variable to `1`.
 
-Note: This setting, when enabled, is opening a hole in the fake bot detection
-which can be used by fake bots to bypass a protection provided by this plugin.
+Note: This setting, when enabled, opens a hole in the fake bot detection,
+which can be used by fake bots to bypass the protection provided by this plugin.
 
 Default value: 0
 
