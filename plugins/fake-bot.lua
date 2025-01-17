@@ -52,9 +52,9 @@ function main(matched_bot)
 		-- https://developers.google.com/search/docs/advanced/crawling/verifying-googlebot
 		bot_domains = {".googlebot.com", ".google.com"}
 		bot_name = "Googlebot"
-	elseif matched_bot == "facebookexternalhit" or matched_bot == "facebookcatalog" or matched_bot == "facebookbot" then
-		-- https://developers.facebook.com/docs/sharing/webmasters/crawler/
-		-- https://developers.facebook.com/docs/sharing/bot/
+	-- We can no longer support 'facebookexternalhit' UA string as Facebook started to use IP addresses without reverse record in DNS.
+	elseif matched_bot == "facebookcatalog" or matched_bot == "facebookbot" then
+		-- https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
 		bot_domains = {".facebook.com", ".fbsv.net"}
 		bot_name = "Facebookbot"
 	elseif matched_bot == "bingbot" then
