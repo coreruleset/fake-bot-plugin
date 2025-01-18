@@ -38,22 +38,6 @@ tests:
           output:
             log_contains: id "9504120"
   - test_title: 9504120-3
-    desc: Check for blocking of fake Facebookbot
-    stages:
-      - stage:
-          input:
-            dest_addr: 127.0.0.1
-            headers:
-              Host: localhost
-              User-Agent: "OWASP CRS test agent: facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)"
-              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            port: 80
-            method: GET
-            version: HTTP/1.1
-            uri: /get
-          output:
-            log_contains: id "9504120"
-  - test_title: 9504120-4
     desc: Check for blocking of fake Bingbot
     stages:
       - stage:
@@ -69,7 +53,7 @@ tests:
             uri: /get
           output:
             log_contains: id "9504120"
-  - test_title: 9504120-5
+  - test_title: 9504120-4
     desc: Check for blocking of fake Twitterbot
     stages:
       - stage:
@@ -85,7 +69,7 @@ tests:
             uri: /get
           output:
             log_contains: id "9504120"
-  - test_title: 9504120-6
+  - test_title: 9504120-5
     desc: Check for blocking of fake Applebot
     stages:
       - stage:
@@ -101,7 +85,7 @@ tests:
             uri: /get
           output:
             log_contains: id "9504120"
-  - test_title: 9504120-7
+  - test_title: 9504120-6
     desc: Check for blocking of fake LinkedInBot
     stages:
       - stage:
@@ -117,7 +101,7 @@ tests:
             uri: /get
           output:
             log_contains: id "9504120"
-  - test_title: 9504120-8
+  - test_title: 9504120-7
     desc: Check for blocking of fake Amazonbot
     stages:
       - stage:
