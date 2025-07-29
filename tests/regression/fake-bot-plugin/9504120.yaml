@@ -2,8 +2,7 @@
 meta:
   author: "azurit"
   description: "Fake Bot Plugin"
-  enabled: true
-  name: 9504120.yaml
+rule_id: 9504120
 tests:
   - test_id: 1
     desc: Check that plugin is not blocking standard User-Agents
