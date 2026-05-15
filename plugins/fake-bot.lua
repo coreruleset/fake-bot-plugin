@@ -48,7 +48,7 @@ function main(matched_bot)
 		m.log(2, "Fake Bot Plugin ERROR: LuaSocket library not installed, please install it or disable this plugin.")
 		return nil
 	end
-	if matched_bot == "googlebot" then
+	if matched_bot == "googlebot" or matched_bot == "googleother" then
 		-- https://developers.google.com/search/docs/advanced/crawling/verifying-googlebot
 		bot_domains = {".googlebot.com", ".google.com"}
 		bot_name = "Googlebot"
