@@ -116,3 +116,19 @@ tests:
         output:
           log:
             expect_ids: [9504120]
+  - test_id: 8
+    desc: Check for blocking of fake GoogleOther
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: "OWASP CRS test agent: Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Mobile Safari/537.36 (compatible; GoogleOther)"
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+          port: 80
+          method: GET
+          version: HTTP/1.1
+          uri: /get
+        output:
+          log:
+            expect_ids: [9504120]
