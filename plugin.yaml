@@ -1,0 +1,51 @@
+# OWASP CRS Plugin Descriptor
+# https://github.com/coreruleset/plugin-registry
+
+schema_version: 1
+
+plugin:
+  name: "fake-bot-plugin"
+  description: "Detects HTTP requests that fake well-known bot user agents by verifying the client IP via DNS PTR records"
+  long_description: |
+    Identifies HTTP requests that claim to be from well-known bots (Amazonbot,
+    Applebot, Bingbot, Facebookbot, Googlebot, LinkedInBot, Twitterbot) but
+    originate from IP addresses that do not resolve back to those bots via DNS
+    PTR records. Helps protect against scraping and abuse from clients
+    impersonating legitimate bots.
+  type: "official"
+  category: "detection"
+  status: "tested"
+  license: "Apache-2.0"
+  authors:
+    - name: "OWASP CRS Team"
+      url: "https://coreruleset.org"
+  repository: "https://github.com/coreruleset/fake-bot-plugin"
+  homepage: "https://coreruleset.org/docs/concepts/plugins/"
+  keywords:
+    - "bot-detection"
+    - "fake-bot"
+    - "crawler"
+    - "security"
+
+rule_id_range:
+  start: 9504000
+  end: 9504999
+
+compatibility:
+  crs_version: ">=4.0.0"
+  engines:
+    - "modsecurity2"
+    - "modsecurity3"
+
+configuration:
+  file: "plugins/fake-bot-config.conf"
+  variables:
+    - name: "tx.fake-bot-plugin_enabled"
+      type: "boolean"
+      default: 1
+      description: "Enable or disable the fake bot detection plugin (0 to disable)"
+
+    - name: "tx.fake-bot-plugin_whitelist_broken_apple_devices"
+      type: "boolean"
+      default: 0
+      description: "Whitelist broken Apple devices that incorrectly identify as a Facebook or Twitter (X) bot (e.g. iMessage link previews). Opens a bypass in fake bot detection when enabled."
